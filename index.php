@@ -1,15 +1,3 @@
-<?php
-
-error_reporting(0);
-$con = mysqli_connect("localhost","root","","test");
-// Check connection
-if (mysqli_connect_errno())
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-$query = mysqli_query($con, "INSERT INTO test VALUES(1, 'MOSHIUR')");
-?>
 
 
 <html>
