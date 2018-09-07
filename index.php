@@ -1,4 +1,8 @@
+<?php
 
+require "config/config.php";
+
+?>
 
 <html>
 <head>
