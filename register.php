@@ -10,10 +10,16 @@ require "includes/form_handler/login_handler.php";
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 	<title>Register Here</title>
 </head>
 <body>
-
+	<div class="wrapper">
+		<div class="login_box">
+			<div class="login_header">
+				<h3>Social</h3>
+				Login or Sign Up 
+			</div>
 	<form action="register.php" method="POST">
 		<input type="email" name="log_email" placeholder="Email" value="<?php 
 	if(isset($_SESSION['log-email'])){
@@ -74,6 +80,8 @@ require "includes/form_handler/login_handler.php";
 	 echo "<span>Successfully Inserted! <br> Please Log in to continue!<br></span>"; ?> -->
 
 	</form>
+</div>
+</div>
 
 </body>
 </html>
