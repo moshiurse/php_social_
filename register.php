@@ -11,15 +11,37 @@ require "includes/form_handler/login_handler.php";
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/js/register.js"></script>
 	<title>Register Here</title>
 </head>
 <body>
+
+	<?php
+
+		if (isset($_POST['register'])) {
+			echo '
+				<script>
+				$(document).ready(function(){
+						$("#log").hide();
+						$("#reg").show();
+					});
+				</script>
+			';
+		}
+	?>
+
+
 	<div class="wrapper">
 		<div class="login_box">
 			<div class="login_header">
 				<h3>Social</h3>
 				Login or Sign Up 
 			</div>
+	<div id="log">
 	<form action="register.php" method="POST">
 		<input type="email" name="log_email" placeholder="Email" value="<?php 
 	if(isset($_SESSION['log-email'])){
@@ -29,11 +51,15 @@ require "includes/form_handler/login_handler.php";
 		<input type="password" name="log_pass" placeholder="Password">
 		<br>
 		<input type="submit" name="login" value="Login">
+		<br>
+		<a href="#" id="signup" class="signup">Need an account? Register Here!</a>
+		<br>
 
 		<?php if (in_array("Email or Password is incorrect!!<br>", $error_array)) echo "Email or Password is incorrect!!<br>"; ?>
 	</form>
+	</div>
 <br>
-
+	<div id="reg">
 	<form action="register.php" method="POST">
 
 	<input type="text" name="reg_fname" placeholder="First Name"
@@ -76,10 +102,13 @@ require "includes/form_handler/login_handler.php";
 	<br>
 	<input type="submit" name="register" value="Register">
 	<br>
+	<a href="#" id="signin" class="signin">Already have an account? Login Here!</a>
+	<br>
 <!-- 	 <?php if(in_array("<span style='color: green;'>Successfully Inserted! <br> Please Log in to continue!<br></span>", $error_array))
 	 echo "<span>Successfully Inserted! <br> Please Log in to continue!<br></span>"; ?> -->
 
 	</form>
+	</div>
 </div>
 </div>
 

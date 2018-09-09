@@ -24,7 +24,6 @@ if (isset($_POST['register'])) {
 	
 	$email = strip_tags($_POST['reg_email']);
 	$email = str_replace(" ", "", $email);
-	$email = ucfirst($email);
 	$_SESSION['reg_email'] = $email;
 	
 	$pass = strip_tags($_POST['reg_pass']);

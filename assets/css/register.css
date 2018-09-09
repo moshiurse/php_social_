@@ -63,3 +63,12 @@ input[type='text']:hover,input[type='email']:hover,input[type='password']:hover 
 
 	border-color: #3498db;
 }
+
+a {
+	text-decoration: none;
+	color: #3498db;
+}
+
+#reg {
+	display: none;
+}
