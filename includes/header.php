@@ -37,6 +37,5 @@ if (isset($_SESSION['username'])) {
 			<a href="#home"><i class="fa fa-cog fa-lg"></i></a>
 		</nav>
 	</div>
-	
-</body>
-</html>
+
+	<div class="wrapper">
