@@ -70,14 +70,14 @@ if (isset($_POST['register'])) {
 		$pass = md5($pass);
 
 		$username = strtolower($fname ."_" . $lname);
-		$check_username = mysqli_query($con, "SELECT user_name FROM users WHERE user_name = '$username'");
+		$check_username = mysqli_query($con, "SELECT username FROM users WHERE username = '$username'");
 
 		$i = 0;
 
 		while (mysqli_num_rows($check_username) != 0) {
 			$i++;
 			$username = $username . "_" . $i;
-			$check_username = mysqli_query($con, "SELECT user_name FROM users WHERE user_name = '$username'");
+			$check_username = mysqli_query($con, "SELECT username FROM users WHERE username = '$username'");
 
 		}
 

@@ -13,7 +13,7 @@
  	if ($check_login == 1) {
  		
  		$row = mysqli_fetch_array($check_db);
- 		$username = $row['user_name'];
+ 		$username = $row['username'];
 
  		$user_closed_query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND user_closed='yes'");
  		if (mysqli_num_rows($user_closed_query) == 1) {
