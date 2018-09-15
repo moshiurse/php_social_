@@ -37,10 +37,13 @@ include("includes/classes/Post.php");
 			<hr>
 		</form>
 
+
+
+
 	<?php
 
-	$user_obj = new User($con, $userLogged);
-	echo $user_obj->getFirstAndlastName();
+    $post = new Post($con, $userLogged);
+    $post->loadPostsFriends();
 
 	?>
 
