@@ -1,5 +1,14 @@
 <?php
-require "includes/header.php";
+include("includes/header.php");
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+
+
+
+	if (isset($_POST['btn_post'])) {
+		$post = new Post($con, $userLogged);
+		$post->submitPost($_POST['post_text'], "none");
+	}
 
 ?>
 
@@ -27,7 +36,18 @@ require "includes/header.php";
 			<input type="submit" name="btn_post" id="btn_post" value="Post">
 			<hr>
 		</form>
+
+	<?php
+
+	$user_obj = new User($con, $userLogged);
+	echo $user_obj->getFirstAndlastName();
+
+	?>
+
 	</div>
+ 
+
+
 
 </div>
 </body>
